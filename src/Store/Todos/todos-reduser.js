@@ -1,14 +1,13 @@
-import {ADD_TODO, TOGGLE_TODO, REMOVE_TODO} from './todos-const'
+import {ADD_TODOS, TOGGLE_TODO, REMOVE_TODO} from './todos-const'
+import {addTodo} from './todos-actions';
 
 export const todosReducer = (state = [], action)=> {
     switch (action.type){
-      case ADD_TODO:{
+      case addTodo.toString():{
         return [
           ...state, 
-          {id: Date.now(), 
-            title: action.title, 
-            title1: action.title1, 
-            completed: false
+          {
+            ...action.payload
           }
         ];
       }
