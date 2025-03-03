@@ -1,5 +1,5 @@
-import {ADD_TODOS, TOGGLE_TODO, REMOVE_TODO} from './todos-const'
-import {addTodo} from './todos-actions';
+// import {ADD_TODOS, TOGGLE_TODO, REMOVE_TODO} from './todos-const'
+import {addTodo, removeTodo, toggleTodo} from './todos-actions';
 
 export const todosReducer = (state = [], action)=> {
     switch (action.type){
@@ -11,10 +11,10 @@ export const todosReducer = (state = [], action)=> {
           }
         ];
       }
-      case REMOVE_TODO:{
+      case removeTodo.toString():{
         return state.filter((todo)=> todo.id !== action.payload);
       }
-      case  TOGGLE_TODO:{
+      case  toggleTodo.toString():{
         return state.map((todo)=>
           todo.id === action.payload ? { ...todo, completed: !todo.completed } : todo
         );
