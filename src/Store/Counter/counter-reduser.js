@@ -1,4 +1,3 @@
-// import {INCREMENT, DECREMENT, RESET} from './counter-const';
 import {increment, decrement, reset} from './counter-actions';
 
 export const counterReducer = (state = 0, action) => {
