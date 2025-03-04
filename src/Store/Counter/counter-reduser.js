@@ -1,14 +1,15 @@
-import {INCREMENT, DECREMENT, RESET} from './counter-const'
+// import {INCREMENT, DECREMENT, RESET} from './counter-const';
+import {increment, decrement, reset} from './counter-actions';
 
 export const counterReducer = (state = 0, action) => {
     switch (action.type) {
-      case INCREMENT: {
+      case increment.toString(): {
         return state + 1;
       }
-      case DECREMENT: {
+      case decrement.toString(): {
         return state - 1;
       }
-      case RESET: {
+      case reset.toString(): {
         return 0;
       }
       default: {
