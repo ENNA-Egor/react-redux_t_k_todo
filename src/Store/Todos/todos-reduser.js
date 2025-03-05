@@ -25,7 +25,7 @@ import {createReducer} from '@reduxjs/toolkit';
 /////./././././.\/\/\/\/\/\/\/./././././.
 
 
-export const todosReducer = createReducer ([], (builder)=> {
+export const todosReducer = createReducer ([], (builder)=> {  //Редюсер с помощью createReducer
   builder
     .addCase(addTodo, (state, action) => {
       const newTodo = action.payload;
@@ -42,7 +42,7 @@ export const todosReducer = createReducer ([], (builder)=> {
     })
 });
 
-// export const todosReducer = (state = [], action)=> {
+// export const todosReducer = (state = [], action)=> {  //Редюсер без reduxjs/toolkit
 //     switch (action.type){
 //       case addTodo.toString():{
 //         return [
