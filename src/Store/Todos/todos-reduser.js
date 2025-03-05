@@ -2,6 +2,29 @@
 import {addTodo, removeTodo, toggleTodo} from './todos-actions';
 import {createReducer} from '@reduxjs/toolkit';
 
+///////\/\/\/\/\/\/\/\/\/\
+//Данная конструкция в reduxjs/toolkit версии 2.6.0 удалена и не работает 
+
+// export const todosReducer = createReducer ([], {
+//   [addTodo]:(state, action) => {
+//     const newTodo = action.payload;
+//     state.push(newTodo);
+//   },
+//   [removeTodo]: (state, action) => {
+//     const id = action.payload;
+//     return state.filter((todo)=> todo.id !== id);
+//   },
+//   [toggleTodo]:(state, action) => {
+//     const id = action.payload;
+//     const todo = state.find (todo => todo.id === id);
+//     todo.completed = !todo.completed;
+//   },
+
+// });
+
+/////./././././.\/\/\/\/\/\/\/./././././.
+
+
 export const todosReducer = createReducer ([], (builder)=> {
   builder
     .addCase(addTodo, (state, action) => {
@@ -17,7 +40,7 @@ export const todosReducer = createReducer ([], (builder)=> {
       const todo = state.find (todo => todo.id === id);
       todo.completed = !todo.completed;
     })
-})
+});
 
 // export const todosReducer = (state = [], action)=> {
 //     switch (action.type){

@@ -15,7 +15,7 @@ export const counterReducer = createReducer (0, (builder)=>{
       .addCase(reset, (state) =>{
         return state = 0
       })
-})
+});
 // export const counterReducer = (state = 0, action) => {
 //     switch (action.type) {
 //       case increment.toString(): {
