@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { removeTodo, toggleTodo } from '../Todos/todos-actions';
+import { removeTodo, toggleTodo } from '../Todos/todos-reduser';
 import {selectVisibleTodos, selectActiveTodos} from '../Todos/todos-selector';
 import {selectActiveFilter} from '../Filters/filters-selectors';
 import '../../App.css';

@@ -7,18 +7,18 @@ import throttle from 'lodash/throttle';
 
 
 
+const rootReducer = combineReducers({
+  counter: counterReducer,
+  todos: todosSlice.reducer,
+  filters,
+  
+});
 // const rootReducer = combineReducers({
 //   counter: counterReducer,
 //   todos: todosReducer,
 //   filters,
   
 // });
-const rootReducer = combineReducers({
-  counter: counterReducer,
-  todos: todosReducer,
-  filters,
-  
-});
 
 
 export const cofigureStore = () => {
