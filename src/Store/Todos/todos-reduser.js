@@ -42,13 +42,33 @@ export const todosReducer = createReducer ([], (builder)=> {  //Редюсер �
     })
 });
 
-// export const todosSlice = createSlice({  // подготовил часть кода для создания Slice
+// export const todosSlice = createSlice({  // часть кода для создания Slice
 //   name : '@@todos',
 //   initialState: [],
 //   reducers: {
-//     addTodo: (state, action)=> {},
-//     removeTodo: (state, action)=> {},
-//     toggleTodo: (state, action)=> {},
+//     addTodo:  {
+//       reducer: (state, action)=> {
+//         const newTodo = action.payload;
+//       state.push(newTodo);
+//       },
+//       prepare:(title,  title1)=> ({
+//           payload:{
+//             title,
+//             title1,
+//             id: nanoid(),
+//             completed: false
+//           }
+//          })
+//     },
+//     removeTodo: (state, action)=> {
+//       const id = action.payload;
+//       return state.filter((todo)=> todo.id !== id)
+//     },
+//     toggleTodo: (state, action)=> {
+//       const id = action.payload;
+//       const todo = state.find (todo => todo.id === id);
+//       todo.completed = !todo.completed;
+//     },
 //     }
 // })
 
