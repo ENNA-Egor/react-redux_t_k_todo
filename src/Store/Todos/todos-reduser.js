@@ -1,6 +1,6 @@
 // import {ADD_TODOS, TOGGLE_TODO, REMOVE_TODO} from './todos-const'
 import {addTodo, removeTodo, toggleTodo} from './todos-actions';
-import {createReducer} from '@reduxjs/toolkit';
+import {createReducer, createSlice} from '@reduxjs/toolkit';
 
 ///////\/\/\/\/\/\/\/\/\/\
 //Данная конструкция в reduxjs/toolkit версии 2.6.0 удалена и не работает 
@@ -41,6 +41,16 @@ export const todosReducer = createReducer ([], (builder)=> {  //Редюсер �
       todo.completed = !todo.completed;
     })
 });
+
+// export const todosSlice = createSlice({  // подготовил часть кода для создания Slice
+//   name : '@@todos',
+//   initialState: [],
+//   reducers: {
+//     addTodo: (state, action)=> {},
+//     removeTodo: (state, action)=> {},
+//     toggleTodo: (state, action)=> {},
+//     }
+// })
 
 // export const todosReducer = (state = [], action)=> {  //Редюсер без reduxjs/toolkit
 //     switch (action.type){
