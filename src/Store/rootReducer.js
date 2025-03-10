@@ -1,7 +1,7 @@
 import { createStore, combineReducers } from "redux";
-import {todosReducer, todosSlice} from './Todos/todos-reduser';
-import {counterReducer, counterSlice} from './Counter/counter-reduser';
-import {filters, filtersSlice} from './Filters/filters-reducer';
+import {todosSlice} from './Todos/todos-reduser';
+import { counterSlice} from './Counter/counter-reduser';
+import {filtersSlice} from './Filters/filters-reducer';
 import {loadState, saveState} from './Todos/local-storage';
 import throttle from 'lodash/throttle';
 
@@ -10,16 +10,10 @@ import throttle from 'lodash/throttle';
 const rootReducer = combineReducers({
   counter: counterSlice.reducer,
   todos: todosSlice.reducer,
-  // filters,
   filters: filtersSlice.reducer,
   
 });
-// const rootReducer = combineReducers({
-//   counter: counterReducer,
-//   todos: todosReducer,
-//   filters,
-  
-// });
+
 
 
 export const cofigureStore = () => {

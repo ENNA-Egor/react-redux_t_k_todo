@@ -10,7 +10,6 @@ const TodoList = () => { // отрисовываем данные
       const dispatch = useDispatch();
       const todos = useSelector((state) => selectVisibleTodos(state, activeFilter));
       return (
-        // <h3>TodoList</h3>
         <ul>
           {todos.map((todo) => (
             <li key={todo.title}>

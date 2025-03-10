@@ -1,5 +1,4 @@
 import { useDispatch } from 'react-redux';
-// import { addTodo } from '../Todos/todos-actions';
 import { addTodo } from '../Todos/todos-reduser';
 
 const NewTodo = () => {
