@@ -10,8 +10,8 @@ import throttle from 'lodash/throttle';
 const rootReducer = combineReducers({
   counter: counterSlice.reducer,
   todos: todosSlice.reducer,
-  filters,
-  // filters: filtersSlice.reducer,
+  // filters,
+  filters: filtersSlice.reducer,
   
 });
 // const rootReducer = combineReducers({

@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { selectActiveFilter } from '../Filters/filters-selectors';
-import { setFilter } from '../Filters/filters-actions';
+import { setFilter } from '../Filters/filters-reducer';
 
 const Filters = () => {
     const dispatch = useDispatch();
