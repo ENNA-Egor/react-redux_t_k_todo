@@ -5,6 +5,7 @@ import { counterSlice} from './Counter/counter-reduser';
 import {filtersSlice} from './Filters/filters-reducer';
 import {loadState, saveState} from './Todos/local-storage';
 import throttle from 'lodash/throttle';
+import logger from 'redux-logger';
 
 
 
@@ -26,7 +27,7 @@ export const store = configureStore ({
     filters: filtersSlice.reducer, 
       // persistedState,
     },
-    // middleware: (getDefaultMiddleware)=> getDefaultMiddleware().concat(loadState(store), saveState(store)),
+    middleware: (getDefaultMiddleware)=> getDefaultMiddleware().concat(logger),
     devTools: true,
     preloadedState : persistedState,
 
