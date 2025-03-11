@@ -1,5 +1,5 @@
-import {configureStore, getDefaultMiddleware} from '@reduxjs/toolkit'
-import { createStore, combineReducers } from "redux";
+import {configureStore} from '@reduxjs/toolkit'
+// import { createStore, combineReducers } from "redux";
 import {todosSlice} from './Todos/todos-reduser';
 import { counterSlice} from './Counter/counter-reduser';
 import {filtersSlice} from './Filters/filters-reducer';
@@ -20,27 +20,27 @@ import logger from 'redux-logger';
 
 const persistedState = loadState();
 
-const middleware= [logger /*, saveState()*/];
+const middleware= [logger];
 
 export const store = configureStore ({
   reducer:{
     counter: counterSlice.reducer,
     todos: todosSlice.reducer,
     filters: filtersSlice.reducer, 
-      // persistedState,
     },
+    preloadedState : persistedState,
     middleware: (getDefaultMiddleware)=> getDefaultMiddleware().concat(...middleware),
     devTools: true,
-    preloadedState : persistedState,
+});
 
-  //  return store ;
-});
-store.subscribe(throttle(()=>{
-}, 3000));
-saveState({
-  todos:store.getState().todos,
-  counter: store.getState().counter,
-});
+store.subscribe(throttle(() => {
+    saveState({
+      todos: store.getState().todos,
+      counter: store.getState().counter,
+    });
+  }, 3000)
+);
+
 
 // export const cofigureStore = () => {
 //   const persistedState = loadState();
