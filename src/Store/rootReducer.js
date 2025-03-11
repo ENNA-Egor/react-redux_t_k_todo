@@ -20,6 +20,8 @@ import logger from 'redux-logger';
 
 const persistedState = loadState();
 
+const middleware= [logger /*, saveState()*/];
+
 export const store = configureStore ({
   reducer:{
     counter: counterSlice.reducer,
@@ -27,7 +29,7 @@ export const store = configureStore ({
     filters: filtersSlice.reducer, 
       // persistedState,
     },
-    middleware: (getDefaultMiddleware)=> getDefaultMiddleware().concat(logger),
+    middleware: (getDefaultMiddleware)=> getDefaultMiddleware().concat(...middleware),
     devTools: true,
     preloadedState : persistedState,
 
