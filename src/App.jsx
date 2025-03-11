@@ -1,5 +1,6 @@
 import Counter from './Store/Components/Counter';
 import Todo from './Store/Components/AppTodo';
+import {ResetApp} from  './Store/Components/ResetApp';
 import './App.css';
 
 function App() {
@@ -13,6 +14,9 @@ function App() {
                 <div>
                     <h2>Hello Redux Todo</h2>
                     <Todo />
+                </div>
+                <div>
+                   <ResetApp/> 
                 </div>
             </header>
         </div>

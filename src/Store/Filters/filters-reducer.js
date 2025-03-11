@@ -1,6 +1,6 @@
 
 import { createSlice} from '@reduxjs/toolkit';
-
+import {ResetToDefault} from '../rootSelectors'
 
 
 export const filtersSlice = createSlice({
@@ -10,7 +10,13 @@ export const filtersSlice = createSlice({
         setFilter: (_, action)=>{
             return action.payload;
         }
-    }
+    },
+        extraReducers: (builder) => {
+          builder
+            .addCase(ResetToDefault, ()=> {
+               return 'all'
+            })
+        }
 }) 
 
 export const {setFilter} = filtersSlice.actions;

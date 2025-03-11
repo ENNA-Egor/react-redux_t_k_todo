@@ -1,6 +1,6 @@
 
 import { createSlice} from '@reduxjs/toolkit';
-
+import {ResetToDefault} from '../rootSelectors'
 
 
 
@@ -17,7 +17,13 @@ export const counterSlice = createSlice({
     reset:(state)=> {
       return state = 0
     },
-  }
+  },
+          extraReducers: (builder) => {
+            builder
+              .addCase(ResetToDefault, ()=> {
+                 return 0
+              })
+          }
 })
 
 

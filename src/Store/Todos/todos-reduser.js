@@ -1,5 +1,6 @@
 
-import { createSlice, nanoid} from '@reduxjs/toolkit';
+import { createSlice, nanoid } from '@reduxjs/toolkit';
+import {ResetToDefault} from '../rootSelectors'
 
 
 
@@ -30,6 +31,12 @@ export const todosSlice = createSlice({  // часть кода для созд�
       const todo = state.find (todo => todo.id === id);
       todo.completed = !todo.completed;
     },
+    },
+    extraReducers: (builder) => {
+      builder
+        .addCase(ResetToDefault, ()=> {
+           return []
+        })
     }
 })
 
