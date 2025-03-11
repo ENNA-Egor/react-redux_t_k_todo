@@ -7,10 +7,10 @@ const Counter = () => {
 
     return (
         <div className="App">
-            <h2>{count}</h2>
-            <button onClick={() => dispatch(decrement())}>-</button>
-            <button onClick={() => dispatch(increment())}>+</button>
-            <button onClick={() => dispatch(reset())}>reset</button>
+            <h3>{count}</h3>
+            <button onClick={() => dispatch(decrement())} className = "btn">-</button>
+            <button onClick={() => dispatch(increment())} className = "btn">+</button>
+            <button onClick={() => dispatch(reset())} className = "btn">reset</button>
         </div>
     );
 };

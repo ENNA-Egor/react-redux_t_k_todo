@@ -6,6 +6,6 @@ export const ResetApp = ()=>{
    const dispatch = useDispatch();
 
    return (
-      <button onClick={()=> dispatch(ResetToDefault())}> Reset</button>
+      <button onClick={()=> dispatch(ResetToDefault())} className = "btn-reset"> ResetApp</button>
    )
 }

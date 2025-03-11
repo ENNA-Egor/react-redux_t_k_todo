@@ -10,6 +10,7 @@ const Filters = () => {
             <button
                 onClick={() => dispatch(setFilter('all'))}
                 style={{ color: activeFilter === 'all' ? 'red' : 'black' }}
+                className = "btn"
             >
                 {' '}
                 all{' '}
@@ -17,6 +18,7 @@ const Filters = () => {
             <button
                 onClick={() => dispatch(setFilter('active'))}
                 style={{ color: activeFilter === 'active' ? 'red' : 'black' }}
+                className = "btn"
             >
                 {' '}
                 active{' '}
@@ -26,6 +28,7 @@ const Filters = () => {
                 style={{
                     color: activeFilter === 'completed' ? 'red' : 'black',
                 }}
+                className = "btn"
             >
                 {' '}
                 completed{' '}

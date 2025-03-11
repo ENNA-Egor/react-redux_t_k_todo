@@ -13,9 +13,9 @@ const NewTodo = () => {
 
     return (
         <form onSubmit={handleSubmit}>
-            <input type="text" name="title" placeholder="new todo" />
-            <input type="text" name="title1" placeholder="new todo1" />
-            <input type="submit" value="Add Todo" />
+            <input type="text" name="title" placeholder="new todo" className = "btn"/>
+            <input type="text" name="title1" placeholder="new todo1" className = "btn"/>
+            <input type="submit" value="Add Todo" className = "btn"/>
         </form>
     );
 };
